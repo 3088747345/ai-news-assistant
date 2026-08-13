@@ -1,0 +1,5 @@
+feedparser
+requests
+pyyaml
+openai==0.28.1
+python-telegram-bot==13.15

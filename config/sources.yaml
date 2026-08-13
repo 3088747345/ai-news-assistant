@@ -1,0 +1,18 @@
+sources:
+
+  # AI
+  - name: HackerNews
+    category: Tech
+    url: https://hnrss.org/frontpage
+
+
+  # 游戏
+  - name: GameSpot
+    category: Game
+    url: https://www.gamespot.com/feeds/news/
+
+
+  # 二次元
+  - name: AnimeTrending
+    category: Anime
+    url: https://anitrendz.net/news/feed/
