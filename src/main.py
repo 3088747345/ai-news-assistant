@@ -2,7 +2,7 @@ from rss import fetch_news
 from ai import summarize_news
 from config import load_sources
 from datetime import datetime
-
+from rss_output import generate_rss
 
 def main():
 
@@ -34,6 +34,7 @@ def main():
     print("正在调用AI分析...")
 
     summary = summarize_news(all_news)
+    generate_rss(summary)
 
 
     today = datetime.now().strftime("%Y-%m-%d")
