@@ -1,0 +1,58 @@
+name: Daily AI News
+
+on:
+  schedule:
+    # 每天北京时间8点运行
+    #     - cron: "0 0 * * *"
+    #
+    #       # 允许手动运行
+    #         workflow_dispatch:
+    #
+    #
+    #         jobs:
+    #
+    #           generate-news:
+    #
+    #               runs-on: ubuntu-latest
+    #
+    #
+    #                   steps:
+    #
+    #                         # 拉取代码
+    #                               - name: Checkout
+    #                                       uses: actions/checkout@v4
+    #
+    #
+    #                                             # 安装Python
+    #                                                   - name: Setup Python
+    #                                                           uses: actions/setup-python@v5
+    #                                                                   with:
+    #                                                                             python-version: "3.8"
+    #
+    #
+    #                                                                                   # 安装依赖
+    #                                                                                         - name: Install dependencies
+    #                                                                                                 run: |
+    #                                                                                                           pip install -r requirements.txt
+    #
+    #
+    #                                                                                                                 # 运行新闻助手
+    #                                                                                                                       - name: Run AI News Assistant
+    #                                                                                                                               env:
+    #                                                                                                                                         DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+    #
+    #                                                                                                                                                 run: |
+    #                                                                                                                                                           python src/main.py
+    #
+    #
+    #                                                                                                                                                                 # 保存日报
+    #                                                                                                                                                                       - name: Commit report
+    #                                                                                                                                                                               run: |
+    #                                                                                                                                                                                         git config --global user.name "github-actions"
+    #                                                                                                                                                                                                   git config --global user.email "github-actions@github.com"
+    #
+    #                                                                                                                                                                                                             git add reports/
+    #
+    #                                                                                                                                                                                                                       git commit -m "update daily news" || exit 0
+    #
+    #                                                                                                                                                                                                                                 git push
