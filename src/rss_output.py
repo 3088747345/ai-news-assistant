@@ -1,15 +1,16 @@
 from feedgen.feed import FeedGenerator
 from pathlib import Path
 from datetime import datetime
+import html
 
 
 def generate_rss(content):
 
     fg = FeedGenerator()
 
-    fg.id(
-        "https://3088747345.github.io/ai-news-assistant/"
-    )
+    base_url = "https://3088747345.github.io/ai-news-assistant/"
+
+    fg.id(base_url)
 
     fg.title(
         "AI News Daily"
@@ -20,7 +21,7 @@ def generate_rss(content):
     )
 
     fg.link(
-        href="https://3088747345.github.io/ai-news-assistant/",
+        href=base_url,
         rel="alternate"
     )
 
@@ -29,14 +30,20 @@ def generate_rss(content):
 
     today = datetime.now().strftime("%Y-%m-%d")
 
-    fe.id(today)
+    article_url = base_url + today
+
+    fe.id(article_url)
+
+    fe.link(
+        href=article_url
+    )
 
     fe.title(
         f"AI News Daily {today}"
     )
 
     fe.description(
-        content
+        html.escape(content)
     )
 
 
